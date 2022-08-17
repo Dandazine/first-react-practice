@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
+const Person = (props)=> {
+  return(
+    <>
+    <h1>Name: {props.name}</h1>
+    <h2>Last Name: {props.lastname}</h2>
+    <h2>Age: {props.age}</h2>
+    </>
+  )
+}
+
+const App = ()=> {
+  const name = 'Dssn';
+  const isNameShowing = true;
+  const isUserLoggedIn = true;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1> Hello {isNameShowing ? name : 'someone'}!</h1>
+      {name ? (
+        <>
+          <h1>{name}</h1>
+        </>
+      ) : (
+        <>
+        <h2> test </h2>
+        <h3> There is no name </h3>
+        </>
+      )}
+
+      <Person name={'John'} lastname={'Doe'} age={23}/>
+      <Person name={'Jane'} lastname={'Don'} age={23}/>
+      <Person name={'Josh'} lastname={'Doe'} age={23}/>
+      <Person name={'Jack'} lastname={'Doe'} age={23}/>
+      <Person name={'Jacklyn'} lastname={'Doe'} age={23}/>
     </div>
   );
 }
